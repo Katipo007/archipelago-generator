@@ -1,2 +1,10 @@
+# Ignore .yy files
+*.yy linguist-vendored
+
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# These files are text and should be normalized (Convert crlf => lf)
+*.xml text
+*.txt text
+*.ini text
