@@ -1,6 +1,14 @@
 ///@description 
 randomise();
 
+lastFPS = fps;
+alarm[0] = room_speed/2;
+
+rotation = 0;
+rotationSpeed = 360/(room_speed*40);
+
+displayMode = 0;
+
 size = 256;
 valMin = -128;//-1;
 valMax = 127;//1;
@@ -17,7 +25,7 @@ for( var j=0; j<size; j++ ) { seedGrid[# 0, j] = valMin; seedGrid[# size-1, j] =
 //seedGrid[# (size/2), (size/2)] = valMin;//random_range(valMin, valMax);
 
 repeat( 5 ) {
-	seedGrid[# irandom(size), irandom(size)] = valMin;
+	//seedGrid[# irandom(size), irandom(size)] = valMin;
 }
 
 noise = -1;
