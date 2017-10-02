@@ -13,5 +13,7 @@ noise = make_noise( size, size/2, valMin, valMax, seedGrid );
 
 surf = noise_to_surface( noise, valMin, valMax );
 
+noise_to_island( noise, surf );
+
 if( surface_exists(surf) )
 	surface_save( surf, "noise.png" );

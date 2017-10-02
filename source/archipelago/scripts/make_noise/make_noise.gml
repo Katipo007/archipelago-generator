@@ -49,21 +49,27 @@ track( "Filling" );
 
 var maxValue = valMax;
 var minValue = valMin;
+var valTotal = 0;
+
 for(var i = 0; i < width; i++) {
     for(var j = 0; j < height; j++) {
 		if( grid[# i, j] < minValue ) {minValue = grid[# i, j];}
-		if( grid[# i, j] > maxValue ) {maxValue = grid[# i, j];}
+		else if( grid[# i, j] > maxValue ) {maxValue = grid[# i, j];}
+		
+		valTotal += grid[# i, j];
     }
 }
 
-var maxScalar = valMax/maxValue;
-var minScalar = valMin/minValue;
+var maxScalar = abs(valMax/maxValue);
+var minScalar = abs(valMin/minValue);
+var decider = valTotal/(size*size);
 
 // Cycle through again and multiply all values
 for(var i = 0; i < width; i++) {
 	for(var j = 0; j < height; j++) {
-		if( grid[# i, j] < 0 ) {grid[# i, j] *= minScalar;}
-		if( grid[# i, j] > 0 ) {grid[# i, j] *= maxScalar;}
+		grid[# i, j] *= min(maxScalar, minScalar);
+		//if( grid[# i, j] < decider ) {grid[# i, j] *= minScalar;}
+		//else if( grid[# i, j] > decider ) {grid[# i, j] *= maxScalar;}
 	}
 }
 track( "Scale correcting" );
