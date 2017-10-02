@@ -4,7 +4,7 @@
     "mvc": "1.0",
     "name": "Windows",
     "option_windows_allow_fullscreen_switching": false,
-    "option_windows_borderless": true,
+    "option_windows_borderless": false,
     "option_windows_company_info": "",
     "option_windows_copyright_info": "(c) 2017 Benjamin Edwards",
     "option_windows_description_info": "A island generator",
