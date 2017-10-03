@@ -151,6 +151,14 @@
             }
         },
         {
+            "Key": "56db9f83-f2f4-4311-b449-c8f1816bfd59",
+            "Value": {
+                "id": "d13275a3-56de-432a-bdc4-8a917c3cb8ba",
+                "resourcePath": "scripts\\make_colour_rgbp\\make_colour_rgbp.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "5b70937f-fb54-4768-bf45-1d884d26cee7",
             "Value": {
                 "id": "ee494e9d-9bde-4739-9f3f-a268427bc7b8",
@@ -380,7 +388,8 @@
         "8d6c8984-3da9-4709-b90d-ca5dffcaf8dd",
         "cec8d035-2b8a-4366-94b4-b38bbb2d3977",
         "cb5f1d54-b189-4648-bbe2-599f018365b2",
-        "83cd12b8-a41f-42e8-b6bd-ea6cf5c2e802"
+        "83cd12b8-a41f-42e8-b6bd-ea6cf5c2e802",
+        "56db9f83-f2f4-4311-b449-c8f1816bfd59"
     ],
     "tutorial": ""
 }

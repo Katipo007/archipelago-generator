@@ -10,8 +10,11 @@ rotationSpeed = 360/(room_speed*40);
 displayMode = 0;
 
 size = 256;
+featureSize = size/4;
 valMin = -128;//-1;
 valMax = 127;//1;
+
+shadersEnabled = false;
 
 
 seedGrid = ds_grid_create( size, size ); ds_grid_clear( seedGrid, undefined );

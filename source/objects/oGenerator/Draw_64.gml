@@ -1,7 +1,7 @@
 ///@description 
 draw_text( 4, 4, "FPS: "+string(lastFPS));
 
-var shadersEnabled = !keyboard_check(ord("S"));
+shadersEnabled = keyboard_check(ord("S"));
 //draw_clear( make_colour_rgb(82,94,179) );
 
 if( !surface_exists(surf) )
