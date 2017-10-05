@@ -62,18 +62,22 @@ for(var i = 0; i < width; i++) {
 
 var maxScalar = abs(valMax/maxValue);
 var minScalar = abs(valMin/minValue);
-var decider = valTotal/(size*size);
+var scaler = min(maxScalar, minScalar);
+
+var sum = 0;
 
 // Cycle through again and multiply all values
 for(var i = 0; i < width; i++) {
 	for(var j = 0; j < height; j++) {
-		grid[# i, j] *= min(maxScalar, minScalar);
-		//if( grid[# i, j] < decider ) {grid[# i, j] *= minScalar;}
-		//else if( grid[# i, j] > decider ) {grid[# i, j] *= maxScalar;}
+		grid[# i, j] *= scaler
+		
+		sum += grid[# i, j];
 	}
 }
+
+var average = sum / (width*height);
 track( "Scale correcting" );
 // All noise should now fit between the given values (valMin and valMax)
 
 
-return grid;
+return [grid, valMin, valMax, average];

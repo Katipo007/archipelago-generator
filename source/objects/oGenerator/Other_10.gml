@@ -2,8 +2,7 @@
 
 // Clean
 	
-if( ds_exists( noise, ds_type_grid ) )
-	ds_grid_destroy(noise);
+noise_free( noise );
 
 // Make new noise
 //noise = make_noise( size, featureSize, valMin, valMax );

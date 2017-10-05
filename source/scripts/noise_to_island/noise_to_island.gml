@@ -5,11 +5,18 @@
 var noise = argument0;
 var surf = argument1;
 
-var width = ds_grid_width(noise);
-var height = ds_grid_height(noise);
+var noiseGrid = noise[ NOISE.GRID ];
+var valMin = noise[ NOISE.MIN ];
+var valMax = noise[ NOISE.MAX ];
+var valAve = noise[ NOISE.AVERAGE];
+
+var width = ds_grid_width(noiseGrid);
+var height = ds_grid_height(noiseGrid);
 
 var blackAndWhite = false;
-var seaLevel = 0.55;
+var seaLevel = ((valAve - valMin) / (valMax - valMin))*1.5; //0.55;
+
+log( "Noise: "+string(noise) + "  -  SeaLevel: "+string(seaLevel) );
 
 
 var val, col;
@@ -18,7 +25,7 @@ surface_set_target(surf);
 for( var i=0; i<width; i++ ) {
 	for( var j=0; j<height; j++ ) {
 		//val = make_colour_hsv( 0, 0, 255 * (clamp( grid[# i, j], valMin, valMax )/valMax) );
-		val = (noise[# i, j] - valMin) / (valMax - valMin);
+		val = (noiseGrid[# i, j] - valMin) / (valMax - valMin);
 		
 		if( blackAndWhite )
 		{
@@ -26,9 +33,9 @@ for( var i=0; i<width; i++ ) {
 		}
 		else
 		{
-			if( val <= seaLevel*0.7 )
+			if( val <= seaLevel*0.75 )
 				col = make_colour_rgbp(0.32, 0.37, 0.70);//vec3(0.02, 0.52, 0.82); // Deep ocean
-			else if( val <= seaLevel*0.9 )
+			else if( val <= seaLevel*0.95 )
 				col = make_colour_rgbp(0.55, 0.61, 1.00);//vec3(0.17, 0.91, 0.96); // Shallow ocean
 			else if( val <= seaLevel )
 				col = make_colour_rgbp(1.00, 0.74, 0.65);//vec3(0.89, 0.65, 0.45); // Sand

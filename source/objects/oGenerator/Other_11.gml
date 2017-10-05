@@ -4,6 +4,6 @@ if( surface_exists(surf) )
 	surface_free( surf );
 
 
-surf = noise_to_surface( noise, valMin, valMax );
+surf = noise_to_surface( noise );
 
 noise_to_island( noise, surf );

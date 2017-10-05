@@ -5,7 +5,7 @@ lastFPS = fps;
 alarm[0] = room_speed/2;
 
 rotation = 0;
-rotationSpeed = 360/(room_speed*40);
+rotationSpeed = 360/(room_speed*60);
 
 displayMode = 0;
 
