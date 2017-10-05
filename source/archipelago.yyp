@@ -167,6 +167,14 @@
             }
         },
         {
+            "Key": "5afc7aef-35c3-4d9a-833b-188325d6e6a7",
+            "Value": {
+                "id": "a625a64b-8e97-434c-8bcd-5afef58a94d3",
+                "resourcePath": "datafiles_yy\\licence.txt.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "5b70937f-fb54-4768-bf45-1d884d26cee7",
             "Value": {
                 "id": "ee494e9d-9bde-4739-9f3f-a268427bc7b8",
