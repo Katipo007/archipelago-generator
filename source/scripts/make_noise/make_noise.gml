@@ -22,6 +22,8 @@ if( ds_exists( seedGrid, ds_type_grid ) ) {
 }
 
 track_begin();
+
+
 // Seed the grid with random values for features
 for( var j = 0; j < height; j += featureSize) {
 	for (var i = 0; i < width; i += featureSize) {
@@ -40,7 +42,6 @@ while( sampleSize > 1 ) {
      
     sampleSize /= 2;
     scale /= 2;
-    //scale *= power(2, -roughness)
 }
 track( "Filling" );
 

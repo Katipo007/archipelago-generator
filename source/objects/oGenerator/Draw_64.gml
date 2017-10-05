@@ -1,8 +1,7 @@
-///@description 
+///@description Draw the island
 draw_text( 4, 4, "FPS: "+string(lastFPS));
 
 shadersEnabled = keyboard_check(ord("S"));
-//draw_clear( make_colour_rgb(82,94,179) );
 
 if( !surface_exists(surf) )
 {
