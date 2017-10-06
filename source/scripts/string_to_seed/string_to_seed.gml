@@ -3,11 +3,13 @@
 
 var str = argument0;
 
+//return real( string_digits( base64_encode( str ) ) );
+
 var result = 0;
 
 for( var i=0; i<SEED_LENGTH; i++ ) {
-	if( i<string_length(str) ) {
-		result = ord(string_char_at(str, i+1)) + result;
+	if( i<=string_length(str) ) {
+		result += ord(string_char_at(str, i+1))*(10*i);
 	}
 	else {
 		// Nothing

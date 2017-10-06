@@ -7,22 +7,18 @@ draw_set_font( font0 );
 lastFPS = fps;
 alarm[0] = room_speed/2;
 
-rotation = 0;
-rotationSpeed = 360/(room_speed*60);
-
 displayMode = 0;
 
 
 seed = random_get_seed();
 
 
+shadersEnabled = true;
 
 size = 256;
 featureSize = size/4;
 valMin = -128;//-1;
 valMax = 127;//1;
-
-shadersEnabled = false;
 
 
 seedGrid = ds_grid_create( size, size ); ds_grid_clear( seedGrid, undefined );
@@ -39,7 +35,4 @@ repeat( 5 ) {
 	//seedGrid[# irandom(size), irandom(size)] = valMin;
 }
 
-noise = -1;
-surf = -1;
-seaLevel = 0.5;
-event_user(0);
+island_create();
