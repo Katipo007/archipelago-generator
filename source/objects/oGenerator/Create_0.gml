@@ -1,7 +1,9 @@
 ///@description 
 randomise();
 window_set_cursor( cr_none );
+draw_set_font( font0 );
 
+// FPS
 lastFPS = fps;
 alarm[0] = room_speed/2;
 
@@ -9,6 +11,11 @@ rotation = 0;
 rotationSpeed = 360/(room_speed*60);
 
 displayMode = 0;
+
+
+seed = random_get_seed();
+
+
 
 size = 256;
 featureSize = size/4;

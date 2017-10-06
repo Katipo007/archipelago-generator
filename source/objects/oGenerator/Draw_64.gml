@@ -1,5 +1,8 @@
 ///@description Draw the island
-draw_text( 4, 4, "FPS: "+string(lastFPS));
+drawScale = window_get_height()/size;
+
+
+draw_text_transformed( 4, 4, "FPS: "+string(lastFPS), drawScale, drawScale, 0 );
 
 shadersEnabled = !keyboard_check(ord("S"));
 
@@ -18,7 +21,7 @@ else
 		shader_set(shader0);
 		shader_set_uniform_f( shader_get_uniform(shader0, "seaLevel"), seaLevel+0.1*sin(current_time/2000) );
 	
-	drawScale = window_get_height()/size;
+	
 	draw_surface_ext( surf, drawScale*-size/2, drawScale*-size/2, drawScale, drawScale, 0, c_white, 1.0 );
 	
 	if(shadersEnabled)
