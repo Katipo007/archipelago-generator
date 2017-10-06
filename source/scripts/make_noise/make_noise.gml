@@ -16,12 +16,13 @@ var grid = ds_grid_create( size, size ); ds_grid_clear( grid, undefined );
 var width = size;
 var height = size;
 
+track_begin(); // Track the time things take
+
+
 // Fill with values from the seedGrid
 if( ds_exists( seedGrid, ds_type_grid ) ) {
 	ds_grid_copy( grid, seedGrid );
 }
-
-track_begin();
 
 
 // Seed the grid with random values for features
@@ -77,7 +78,7 @@ for(var i = 0; i < width; i++) {
 }
 
 var average = sum / (width*height);
-track( "Scale correcting" );
+track( "Correcting" );
 // All noise should now fit between the given values (valMin and valMax)
 
 

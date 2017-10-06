@@ -1,5 +1,6 @@
 ///@description 
 randomise();
+window_set_cursor( cr_none );
 
 lastFPS = fps;
 alarm[0] = room_speed/2;
@@ -33,4 +34,5 @@ repeat( 5 ) {
 
 noise = -1;
 surf = -1;
+seaLevel = 0.5;
 event_user(0);

@@ -10,9 +10,9 @@ var valMax = noise[ NOISE.MAX ];
 var width = ds_grid_width(noiseGrid);
 var height = ds_grid_height(noiseGrid);
 
-
-
 var surf = surface_create(width, height);
+
+track_begin();
 
 var val, col;
 surface_set_target(surf);
@@ -26,5 +26,7 @@ for( var i=0; i<width; i++ ) {
 	}
 }
 surface_reset_target();
+
+track( "Noise -> b&w surface" );
 
 return surf;

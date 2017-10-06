@@ -13,11 +13,12 @@ var valAve = noise[ NOISE.AVERAGE];
 var width = ds_grid_width(noiseGrid);
 var height = ds_grid_height(noiseGrid);
 
-var blackAndWhite = false;
+var blackAndWhite = true;
 var seaLevel = ((valAve - valMin) / (valMax - valMin))*1.5;
 
 log( "Noise: "+string(noise) + "  -  SeaLevel: "+string(seaLevel) );
 
+track_begin();
 
 var val, col;
 surface_set_target(surf);
@@ -40,13 +41,15 @@ for( var i=0; i<width; i++ ) {
 			else if( val <= seaLevel )
 				col = make_colour_rgbp(1.00, 0.74, 0.65); // Sand
 			else
-				col = make_colour_rgbp(0.54, 0.80, 0.36); // Green grass
+				col = make_colour_rgbp(0.49, 0.70, 0.35);//make_colour_rgbp(0.54, 0.80, 0.36); // Green grass
 		}
 		
 		draw_point_colour( i, j, col );
 	}
 }
 surface_reset_target();
+
+track( "Island colouring" );
 
 
 var mask = surface_create( surface_get_width(surf), surface_get_height(surf) );
@@ -74,5 +77,7 @@ surface_set_target( surf );
 	gpu_set_blendmode(bm_normal);
 	gpu_set_tex_filter( false );
 surface_reset_target();
+
+track( "Island masking" );
 
 surface_free( mask );
