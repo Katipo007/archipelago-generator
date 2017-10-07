@@ -10,7 +10,7 @@ alarm[0] = room_speed/2;
 displayMode = 0;
 
 
-seed = random_get_seed();
+seed = "";
 
 
 shadersEnabled = true;

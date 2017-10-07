@@ -23,28 +23,33 @@ track_begin();
 var val, col;
 surface_set_target(surf);
 
-for( var i=0; i<width; i++ ) {
-	for( var j=0; j<height; j++ ) {
+var skipNormal = special_seed_paint( seed, noise, surf );
+
+if( skipNormal == false )
+{
+	for( var i=0; i<width; i++ ) {
+		for( var j=0; j<height; j++ ) {
 		
-		val = (noiseGrid[# i, j] - valMin) / (valMax - valMin);
+			val = (noiseGrid[# i, j] - valMin) / (valMax - valMin);
 		
-		if( blackAndWhite )
-		{
-			col = make_colour_hsv( 0, 0, 255 * val);
-		}
-		else
-		{
-			if( val <= seaLevel*0.75 )
-				col = make_colour_rgbp(0.32, 0.37, 0.70); // Deep ocean
-			else if( val <= seaLevel*0.95 )
-				col = make_colour_rgbp(0.55, 0.61, 1.00); // Shallow ocean
-			else if( val <= seaLevel )
-				col = make_colour_rgbp(1.00, 0.74, 0.65); // Sand
+			if( blackAndWhite )
+			{
+				col = make_colour_hsv( 0, 0, 255 * val);
+			}
 			else
-				col = make_colour_rgbp(0.49, 0.70, 0.35);//make_colour_rgbp(0.54, 0.80, 0.36); // Green grass
-		}
+			{
+				if( val <= seaLevel*0.75 )
+					col = make_colour_rgbp(0.32, 0.37, 0.70); // Deep ocean
+				else if( val <= seaLevel*0.95 )
+					col = make_colour_rgbp(0.55, 0.61, 1.00); // Shallow ocean
+				else if( val <= seaLevel )
+					col = make_colour_rgbp(1.00, 0.74, 0.65); // Sand
+				else
+					col = make_colour_rgbp(0.49, 0.70, 0.35);//make_colour_rgbp(0.54, 0.80, 0.36); // Green grass
+			}
 		
-		draw_point_colour( i, j, col );
+			draw_point_colour( i, j, col );
+		}
 	}
 }
 surface_reset_target();

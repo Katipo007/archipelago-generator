@@ -4,7 +4,7 @@ var scale = other.drawScale;
 
 draw_text_transformed( 4, 4, "FPS: "+string(lastFPS), drawScale, drawScale, 0 );
 
-shadersEnabled = !keyboard_check(ord("S"));
+shadersEnabled = !keyboard_check(vk_shift);
 
 if( !instance_exists(oIsland) )
 	exit;
@@ -21,7 +21,13 @@ else with( oIsland ) {
 
 	if(other.shadersEnabled)
 		shader_set(shader0);
-		shader_set_uniform_f( shader_get_uniform(shader0, "seaLevel"), seaLevel+0.1*sin(current_time/2000) );
+		
+		var seaVal = seaLevel+0.1*sin(current_time/2000);
+		
+		if( seed == "MATANUI" )
+			seaVal = 0.38;
+			
+		shader_set_uniform_f( shader_get_uniform(shader0, "seaLevel"), seaVal );
 	
 	
 	draw_surface_ext( surface, other.drawScale*-size/2, other.drawScale*-size/2, other.drawScale, other.drawScale, 0, c_white, 1.0 );
@@ -31,8 +37,15 @@ else with( oIsland ) {
 	
 	matrix_set( matrix_world, matrix_build_identity() );
 	
+	var seedString = oGenerator.seed;
+	if( seedString == "" )
+		seedString = seed;
 	
-	draw_text_transformed( 4, window_get_height()-string_height("A")*scale, string(seed), scale, scale, 0 );
+	if( keyboard_check(vk_f3) )
+	{
+		seedString += "\n"+string(seedReal);
+	}
+	draw_text_transformed( 4, window_get_height()-string_height(seedString)*scale, seedString, scale, scale, 0 );
 	
 	rotation += rotationSpeed;
 }
