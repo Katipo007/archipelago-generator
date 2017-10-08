@@ -95,6 +95,14 @@
             }
         },
         {
+            "Key": "24a13943-e91c-4223-beb6-404c743fd482",
+            "Value": {
+                "id": "12a69ca1-016e-4f18-811c-ccd05ef9aa50",
+                "resourcePath": "scripts\\string_ucwords\\string_ucwords.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "29d3b930-b9e8-4726-9dff-98c72aea2976",
             "Value": {
                 "id": "1e144f47-de16-42f1-84f2-7722fbb32ba3",
@@ -299,6 +307,14 @@
             "Value": {
                 "id": "15266875-b3af-4aec-8710-6f046a41d1cb",
                 "resourcePath": "scripts\\special_seed_paint\\special_seed_paint.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "a2d86ffc-d7ca-40df-b2cc-ab36102172b2",
+            "Value": {
+                "id": "ef2c2563-d978-401b-9a42-1f559ac1658d",
+                "resourcePath": "scripts\\string_speakable\\string_speakable.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -544,7 +560,9 @@
         "eed19fbb-0296-4b0d-b74a-6b8af088d0a8",
         "2e15393d-9f5f-4fcf-9487-6e9309d02a3b",
         "7340c89a-bcc6-454f-9542-452713575961",
-        "986a4d57-4130-49ca-8313-20a24699b35f"
+        "986a4d57-4130-49ca-8313-20a24699b35f",
+        "24a13943-e91c-4223-beb6-404c743fd482",
+        "a2d86ffc-d7ca-40df-b2cc-ab36102172b2"
     ],
     "tutorial": ""
 }

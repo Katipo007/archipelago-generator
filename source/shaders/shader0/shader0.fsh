@@ -4,21 +4,43 @@
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 
-uniform float seaLevel;
+uniform int levelCount;
+uniform float levels[16];
+uniform float levelColours[48];
 
 void main()
 {
 	vec4 col = texture2D( gm_BaseTexture, v_vTexcoord );
+	bool set = false;
 	
-	if( col.r <= seaLevel*0.75 )
-		col.rgb = vec3(0.32, 0.37, 0.70);//vec3(0.02, 0.52, 0.82); // Deep ocean
-	else if( col.r <= seaLevel*0.95 )
-		col.rgb = vec3(0.55, 0.61, 1.00);//vec3(0.17, 0.91, 0.96); // Shallow ocean
-	else if( col.r <= seaLevel )
-		col.rgb = vec3(1.00, 0.74, 0.65);//vec3(0.89, 0.65, 0.45); // Sand
-	else
-		col.rgb = vec3(0.54, 0.80, 0.36);//vec3(0.39, 0.78, 0.30); // Green grass
+	int i = 0;
 	
+	for( i=0; i<levelCount; i++ )
+	{
+		if( col.r <= levels[i] )
+		{
+			int i1 = i*3;
+			int i2 = i*3+1;
+			int i3 = i*3+2;
+			
+			col.r = levelColours[i1];
+			col.g = levelColours[i2];
+			col.b = levelColours[i3];
+			set = true;
+			break;
+		}
+	}
+	
+	if( set == false )
+	{
+		int i1 = (levelCount-1)*3;
+		int i2 = (levelCount-1)*3+1;
+		int i3 = (levelCount-1)*3+2;
+			
+		col.r = levelColours[i1];
+		col.g = levelColours[i2];
+		col.b = levelColours[i3];
+	}
 	
     gl_FragColor = v_vColour * col;
 }

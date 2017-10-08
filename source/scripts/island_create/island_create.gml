@@ -39,9 +39,9 @@ with( instance_create_depth( 0, 0, 0, oIsland ) ) {
 	surface = noise_to_surface( noise );
 	
 	seaLevel = ((noise[NOISE.AVERAGE] - noise[NOISE.MIN]) / (noise[NOISE.MAX] - noise[NOISE.MIN]))*1.5;
-	name = random_name();
 	
 	noise_to_island( noise, surface );
+	name = random_name();
 	
 	special_seed_post( id );
 	
