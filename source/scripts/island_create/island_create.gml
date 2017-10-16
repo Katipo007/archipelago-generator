@@ -40,6 +40,9 @@ with( instance_create_depth( 0, 0, 0, oIsland ) ) {
 	
 	seaLevel = ((noise[NOISE.AVERAGE] - noise[NOISE.MIN]) / (noise[NOISE.MAX] - noise[NOISE.MIN]))*1.5;
 	
+	if( seed == "MATANUI" )
+			seaLevel = 0.38;
+	
 	noise_to_island( noise, surface );
 	name = random_name();
 	

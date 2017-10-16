@@ -2,7 +2,7 @@
 ///@arg length
 
 var result, i, offset;
-offset = choose( 0, 1 );
+offset = choose( 0, 0, 1 );
 result = "";
 
 for( i=offset; i<(argument0+offset); i++ )

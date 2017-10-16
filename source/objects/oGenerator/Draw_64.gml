@@ -23,9 +23,6 @@ else with( oIsland ) {
 		shader_set(shader0);
 		
 		var seaVal = seaLevel;//+0.1*sin(current_time/2000);
-		
-		if( seed == "MATANUI" )
-			seaVal = 0.38;
 			
 		var terrainCols = [
 			0.32, 0.37, 0.70,

@@ -29,3 +29,9 @@ if( keyboard_check_pressed( vk_f2 ) )
 	if( ++displayMode > 1 )
 		displayMode = 0;
 }
+
+// Sea level manipulation
+if( keyboard_check(vk_up) )
+	oIsland.seaLevel = clamp(oIsland.seaLevel - 0.0025, valMin, valMax);
+else if( keyboard_check(vk_down) )
+	oIsland.seaLevel = clamp(oIsland.seaLevel + 0.0025, valMin, valMax);
