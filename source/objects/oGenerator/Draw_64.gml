@@ -34,9 +34,11 @@ else with( oIsland ) {
 			0.90, 0.90, 0.90,
 		];
 		
+		var tide = sin(current_time/700);
+		
 		var terrainLevels = [
-			seaVal*0.75,
-			seaVal*0.95,
+			seaVal*0.75 + 0.006*tide,
+			seaVal*0.95 + 0.01*tide,
 			seaVal*1.00,
 			seaVal*1.47,
 			seaVal*2.00, //seaVal*1.80,
