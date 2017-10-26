@@ -68,9 +68,9 @@ else
 				];
 		
 				// Feed values to shader
-				shader_set_uniform_i( shader_get_uniform(shader0, "levelCount"), array_length_1d(terrainCols)/3 );
-				shader_set_uniform_f_array( shader_get_uniform(shader0, "levels"), terrainLevels );
-				shader_set_uniform_f_array( shader_get_uniform(shader0, "levelColours"), terrainCols );
+				shader_set_uniform_i( shader_get_uniform(shColourIsland, "levelCount"), array_length_1d(terrainCols)/3 );
+				shader_set_uniform_f_array( shader_get_uniform(shColourIsland, "levels"), terrainLevels );
+				shader_set_uniform_f_array( shader_get_uniform(shColourIsland, "levelColours"), terrainCols );
 			}
 		#endregion
 	
