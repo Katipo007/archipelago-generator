@@ -1,5 +1,6 @@
 //
-// Simple passthrough fragment shader
+// By Benjamin Edwards
+// Takes an array of values used to choose a colour from the given array of colours
 //
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;

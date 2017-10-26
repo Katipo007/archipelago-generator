@@ -1,6 +1,9 @@
 ///@function string_speakable
 ///@arg length
 
+///@note: Based on 'speakable_password' from gmlscripts.com
+///@source: http://www.gmlscripts.com/script/speakable_password
+
 var result, i, offset;
 offset = choose( 0, 0, 1 );
 result = "";

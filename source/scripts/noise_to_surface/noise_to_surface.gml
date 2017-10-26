@@ -1,6 +1,8 @@
 ///@function noise_to_surface
 ///@arg noise
 
+///@description Takes a noise and returns a visual representation (drawn to a surface in black and white)
+
 var noise = argument0;
 
 var noiseGrid = noise[ NOISE.GRID ];
@@ -17,8 +19,10 @@ track_begin();
 var val, col;
 surface_set_target(surf);
 
-for( var i=0; i<width; i++ ) {
-	for( var j=0; j<height; j++ ) {
+for( var i=0; i<width; i++ )
+{
+	for( var j=0; j<height; j++ )
+	{
 		val = (noiseGrid[# i, j] - valMin) / (valMax - valMin);
 		
 		col = make_colour_hsv( 0, 0, 255 * val);

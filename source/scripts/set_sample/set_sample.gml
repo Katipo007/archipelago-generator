@@ -5,6 +5,8 @@
 ///@arg y
 ///@arg value
 
+///@note: Will only work if the given cell's value is undefined
+
 var grid = argument0;
 var xx = argument1;
 var yy = argument2;

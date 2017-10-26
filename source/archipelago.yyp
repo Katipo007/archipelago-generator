@@ -223,14 +223,6 @@
             }
         },
         {
-            "Key": "5afc7aef-35c3-4d9a-833b-188325d6e6a7",
-            "Value": {
-                "id": "a625a64b-8e97-434c-8bcd-5afef58a94d3",
-                "resourcePath": "datafiles_yy\\licence.txt.yy",
-                "resourceType": "GMIncludedFile"
-            }
-        },
-        {
             "Key": "5b70937f-fb54-4768-bf45-1d884d26cee7",
             "Value": {
                 "id": "ee494e9d-9bde-4739-9f3f-a268427bc7b8",
@@ -292,6 +284,14 @@
                 "id": "92e473e9-bb0c-4414-b04e-f25da1deda3a",
                 "resourcePath": "views\\82d2d580-70a0-4975-811f-e531294d78e6.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "82d5d368-816c-4aad-a3d5-1c9acccb6374",
+            "Value": {
+                "id": "31e3de70-66aa-49c4-b66e-feef35e1c391",
+                "resourcePath": "notes\\READ_ME.yy",
+                "resourceType": "GMNotes"
             }
         },
         {
@@ -490,7 +490,7 @@
             "Key": "f332bdf3-eda1-41b5-b8be-f5d4bba38c6c",
             "Value": {
                 "id": "1be9a60d-f753-4b8b-ab68-d13f1c9a6c37",
-                "resourcePath": "shaders\\shader0\\shader0.yy",
+                "resourcePath": "shaders\\shColourIsland\\shColourIsland.yy",
                 "resourceType": "GMShader"
             }
         },
@@ -500,14 +500,6 @@
                 "id": "c42e1534-8304-4d43-8f89-c49cacb71758",
                 "resourcePath": "options\\mac\\options_mac.yy",
                 "resourceType": "GMMacOptions"
-            }
-        },
-        {
-            "Key": "f5ed5344-f7ab-47b7-895f-b2a3bf5db772",
-            "Value": {
-                "id": "4d7d4985-e847-47cd-8fb4-d7a3a6b50812",
-                "resourcePath": "views\\f5ed5344-f7ab-47b7-895f-b2a3bf5db772.yy",
-                "resourceType": "GMFolder"
             }
         },
         {

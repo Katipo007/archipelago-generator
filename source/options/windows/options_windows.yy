@@ -7,7 +7,7 @@
     "option_windows_borderless": false,
     "option_windows_company_info": "",
     "option_windows_copyright_info": "(c) 2017 Benjamin Edwards",
-    "option_windows_description_info": "A island generator",
+    "option_windows_description_info": "An island generator",
     "option_windows_display_cursor": true,
     "option_windows_display_name": "Archipelago",
     "option_windows_enable_steam": false,
@@ -28,10 +28,10 @@
     "option_windows_texture_page": "2048x2048",
     "option_windows_use_splash": false,
     "option_windows_version": {
-        "build": 0,
+        "build": 2,
         "major": 0,
-        "minor": 0,
-        "revision": 3
+        "minor": 1,
+        "revision": 0
     },
     "option_windows_vsync": false
 }

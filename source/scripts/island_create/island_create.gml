@@ -3,25 +3,31 @@
 
 var seed = undefined;
 
-if( argument_count == 1 ) {
+if( argument_count == 1 )
+{
 	seed = argument[0];
-} else {
+}
+else
+{
 	randomise();
 	seed = new_random_seed();
 }
 
 var seedVal = undefined;
+
 if( is_real(seed) )
 	seedVal = seed;
 else
 	seedVal = string_to_seed( seed );
+	
 
 random_set_seed( seedVal ); // Now given the same seed the same island should generate every time
 /*
 	SO LONG AS: Random numbers are collected in the same type/order
 */
 
-with( instance_create_depth( 0, 0, 0, oIsland ) ) {
+with( instance_create_depth( 0, 0, 0, oIsland ) )
+{
 	self.seed = seed;
 	self.seedReal = seedVal;
 	

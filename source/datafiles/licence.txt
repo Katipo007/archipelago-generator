@@ -1,7 +1,0 @@
-Archipelago by Benjamin Edwards ( https://twitter.com/Katipo007 )
-
-is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (http://creativecommons.org/licenses/by-nc-sa/4.0/)
-
-https://github.com/Katipo007/archipelago-generator
-
-Permissions beyond the scope of this license may be available by contacting me on twitter ( https://twitter.com/Katipo007 )
