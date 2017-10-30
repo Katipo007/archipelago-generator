@@ -54,5 +54,7 @@ with( instance_create_depth( 0, 0, 0, oIsland ) )
 	
 	special_seed_post( id );
 	
+	model = noise_to_3d_model( noise );
+	
 	return id;
 }

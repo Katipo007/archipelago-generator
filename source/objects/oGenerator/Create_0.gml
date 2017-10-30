@@ -1,6 +1,7 @@
 ///@description 
 randomise(); // Pick a random internal seed on run
 
+k3d_prepare();
 window_set_cursor( cr_none ); // Make the cursor invisible
 draw_set_font( font0 );
 

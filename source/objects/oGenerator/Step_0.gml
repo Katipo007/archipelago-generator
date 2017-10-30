@@ -32,7 +32,7 @@
 // Pressing F2 changes the display mode for the island
 if( keyboard_check_pressed( KEY_CHANGE_DISPLAY_MODE ) )
 {
-	if( ++displayMode > 1 )
+	if( ++displayMode > 2 )
 		displayMode = 0;
 }
 
