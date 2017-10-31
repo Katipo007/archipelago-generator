@@ -15,7 +15,6 @@ void main()
 	bool set = false;
 	
 	int i = 0;
-	
 	for( i=0; i<levelCount; i++ )
 	{
 		if( col.r <= levels[i] )

@@ -13,15 +13,18 @@ var height = ds_grid_height(noiseGrid);
 
 var model = k3d_model_create();
 
+track_begin();
+
 k3d_model_begin(model);
 var x1, x2, y1, y2, v1, v2, v3, v4;
 
-for( var i=0; i<(width-1); i++ )
+var step = 2;
+for( var i=0; i<(width-step-1); i+=step )
 {
-	for( var j=0; j<(height-1); j++ )
+	for( var j=0; j<(height-step-1); j+=step )
 	{
-		x1 = i; x2 = i+1;
-		y1 = j; y2 = j+1;
+		x1 = i; x2 = i+step;
+		y1 = j; y2 = j+step;
 		
 		v1 = vector3(x1, y1, noiseGrid[# x1, y1]);
 		v2 = vector3(x2, y1, noiseGrid[# x2, y1]);
@@ -53,5 +56,7 @@ for( var i=0; i<(width-1); i++ )
 	}
 }
 k3d_model_end();
+
+track( "Noise -> 3D Mesh" );
 
 return model;

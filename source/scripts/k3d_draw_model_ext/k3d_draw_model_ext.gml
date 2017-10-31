@@ -13,8 +13,10 @@
 
 
 var matrix = matrix_build( argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8, argument9);
+var preMatrix = matrix_get( matrix_world );
+matrix = matrix_multiply( matrix, preMatrix );
 matrix_set(matrix_world, matrix);
 
 vertex_submit( ds_list_find_value(global.k3d_vertex_buffer_list, argument0), pr_trianglelist, argument10);
 
-matrix_set( matrix_world, matrix_build_identity() );
+matrix_set( matrix_world, preMatrix );
