@@ -6,6 +6,7 @@ self.drawScale = window_get_height()/size;
 var displayMode = self.displayMode;
 var shadersEnabled = self.shadersEnabled;
 var drawScale = self.drawScale;
+var textScale = window_get_height() / (size*(256/size));
 
 // Draw the FPS counter if the debug key is held
 if( keyboard_check( KEY_DEBUG ) )
@@ -80,7 +81,8 @@ else
 			k3d_start();
 			gpu_set_tex_filter(true);
 			//k3d_draw_model( model, other.drawScale*-size/2, other.drawScale*-size/2, 0, surface_get_texture(surface) );
-			k3d_draw_model_ext( model, drawScale*-size/2, drawScale*-size/2, 0, 0, 0, 0, drawScale, drawScale, -drawScale/8, surface_get_texture(surface) );
+			var islandDrawScale = drawScale * 1.4;
+			k3d_draw_model_ext( model, islandDrawScale*-size/2, islandDrawScale*-size/2, 0, 0, 0, 0, islandDrawScale, islandDrawScale, -islandDrawScale/6, surface_get_texture(surface) );
 			
 			//draw_set_colour( make_colour_rgbp(0.55, 0.61, 1.00) ); draw_set_alpha(0.5);
 			draw_set_colour( c_black ); draw_set_alpha(1.0);
@@ -117,12 +119,12 @@ else
 				seedString += "\n"+string(seedReal);
 			}
 			// Draw the seed text to the screen
-			draw_text_transformed( 4, window_get_height()-string_height(seedString)*drawScale, seedString, drawScale, drawScale, 0 );
+			draw_text_transformed( 4, window_get_height()-string_height(seedString)*textScale, seedString, textScale, textScale, 0 );
 		#endregion
 	
 		// Draw the Island's name to the screen
 		draw_set_halign( fa_right );
-		draw_text_transformed( window_get_width()-4, window_get_height()*0.4, name, drawScale, drawScale, 0 );
+		draw_text_transformed( window_get_width()-4, window_get_height()*0.4, name, textScale, textScale, 0 );
 		draw_set_halign( fa_left );
 	
 		
